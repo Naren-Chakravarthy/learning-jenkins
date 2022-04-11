@@ -17,7 +17,7 @@ pipeline {
   stages {
     stage ("One") {
       steps {
-        sh   "echo Hello 1
+        sh "echo Hello 1
               echo Hello 2
               echo Environment url = ${ENV_URL}"
       }
