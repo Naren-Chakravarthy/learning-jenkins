@@ -9,7 +9,7 @@ pipeline {
        steps {
          sh '''echo Hello 1
                echo Hello 2
-               echo Environment url = ${ENV_URL}
+               echo Environment URL = ${ENV_URL}
          '''
        }
      }
@@ -18,7 +18,7 @@ pipeline {
         ENV_URL = "pipeline.google.com"
           }
        steps {
-              sh 'echo Environment url = ${ENV_URL}'
+              sh 'echo Environment URL = ${ENV_URL}'
             }
           }
   }
