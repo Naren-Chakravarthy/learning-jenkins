@@ -6,7 +6,8 @@ pipeline {
        steps {
          echo "one"
          sh '''echo Hello 1
-         echo hello 2'''
+         echo Hello 2'''
+         addShortText background: '', borderColor: '', color: '', link: '', text: 'one'
 
        }
      }
