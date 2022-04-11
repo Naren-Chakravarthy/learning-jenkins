@@ -19,7 +19,7 @@ pipeline {
        }
        steps {
          sh 'echo Environment url = ${ENV_URL}'
-         sh 'echo env'
+         sh 'env'
        }
      }
   }
