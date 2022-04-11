@@ -5,6 +5,9 @@ pipeline {
      stage ("one") {
        steps {
          echo "one"
+         sh '''echo Hello 1
+         echo hello 2'''
+
        }
      }
      stage ("two") {
