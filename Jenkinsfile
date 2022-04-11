@@ -31,12 +31,12 @@ pipeline {
          sh 'echo Environment url = ${ENV_URL}'
          sh 'env'
          sh "echo '\033[34mHello\033[0m \033[33mcolorful\033[0m \033[35mworld!\033[0m'"
-         sh  '''echo "Hello ${params.PERSON}"
+         sh  '''echo "Hello: ${params.PERSON}"
                 echo "Biography: ${params.BIOGRAPHY}"
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
                 echo "Password: ${params.PASSWORD}"
-              '''
+         '''
        }
      }
   }
