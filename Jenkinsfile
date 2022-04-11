@@ -17,9 +17,9 @@ pipeline {
   stages {
     stage ("One") {
       steps {
-        sh '''echo Hello 1
+        sh   "echo Hello 1
               echo Hello 2
-              echo Environment url = ${ENV_URL}'''
+              echo Environment url = ${ENV_URL}"
       }
     }
      stage ("Two") {
@@ -29,8 +29,8 @@ pipeline {
        steps {
          sh 'echo Environment url = ${ENV_URL}'
          sh 'env'
-         sh '''echo '\033[34mHello\033[0m \033[33mcolorful\033[0m \033[35mworld!\033[0m''''
-         sh '''echo "Hello ${params.PERSON}"
+         sh "echo '\033[34mHello\033[0m \033[33mcolorful\033[0m \033[35mworld!\033[0m'"
+         sh 'echo "Hello ${params.PERSON}"
 
              echo "Biography: ${params.BIOGRAPHY}"
 
@@ -38,7 +38,7 @@ pipeline {
 
              echo "Choice: ${params.CHOICE}"
 
-             echo "Password: ${params.PASSWORD}"'''
+             echo "Password: ${params.PASSWORD}"'
 
        }
      }
