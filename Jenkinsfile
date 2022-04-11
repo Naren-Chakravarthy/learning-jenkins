@@ -3,8 +3,8 @@ pipeline {
 
   stages {
      stage ("one") {
-       environment {
-       ENV_URL = "pipeline.google.com"
+        environment {
+        ENV_URL = "pipeline.google.com"
        }
        steps {
          sh '''echo Hello 1
