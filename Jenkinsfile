@@ -1,8 +1,8 @@
 pipeline {
   agent any
     environment {
-      ENV_URL = "pipeline.google.com"
-      SSH_CRED = Credentials("SSH")
+    ENV_URL = "pipeline.google.com"
+    SSH_CRED = Credentials("SSH")
     }
   stages {
     stage ("One") {
@@ -14,9 +14,9 @@ pipeline {
       }
     }
      stage ("Two") {
-     environment {
+       environment {
        ENV_URL = "stage.google.com"
-     }
+       }
        steps {
          sh 'echo Environment url = ${ENV_URL}'
          sh 'echo env'
