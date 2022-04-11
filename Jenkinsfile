@@ -2,7 +2,7 @@ pipeline {
   agent any
     environment {
     ENV_URL = "pipeline.google.com"
-    SSH_CRED = Credentials("SSH")
+    SSH_CRED = "SSH"
     }
   stages {
     stage ("One") {
