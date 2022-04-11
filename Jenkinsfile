@@ -19,8 +19,7 @@ pipeline {
       steps {
         sh '''echo Hello 1
               echo Hello 2
-              echo Environment url = ${ENV_URL}
-        '''
+              echo Environment url = ${ENV_URL}'''
       }
     }
      stage ("Two") {
