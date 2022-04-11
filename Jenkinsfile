@@ -6,19 +6,15 @@ pipeline {
   stages {
      stage ("one") {
        steps {
-         echo "one"
          sh '''echo Hello 1
                echo Hello 2
-               Environment url = ${ENV_URL}
-            '''
-         addShortText background: '', borderColor: '', color: '', link: '', text: 'one'
-
+               echo Environment url = ${ENV_URL}
+         '''
        }
      }
      stage ("two") {
             steps {
-              echo "two"
-              sh 'Environment url = ${ENV_URL}'
+              sh 'echo Environment url = ${ENV_URL}'
             }
           }
   }
