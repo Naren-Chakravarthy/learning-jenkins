@@ -10,7 +10,7 @@ pipeline {
          sh '''echo Hello 1
                echo Hello 2
                echo Environment url = ${ENV_URL}
-               env
+
          '''
        }
      }
@@ -20,6 +20,7 @@ pipeline {
           }
        steps {
               sh 'echo Environment url = ${ENV_URL}'
+              sh 'env'
             }
           }
   }
