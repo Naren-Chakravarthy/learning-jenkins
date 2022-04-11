@@ -1,11 +1,10 @@
 pipeline {
   agent any
-
+    environment {
+            ENV_URL = "pipeline.google.com"
+             }
   stages {
      stage ("One") {
-        environment {
-        ENV_URL = "pipeline.google.com"
-         }
        steps {
          sh '''echo Hello 1
                echo Hello 2
@@ -15,7 +14,7 @@ pipeline {
      }
      stage ("Two") {
         environment {
-        ENV_URL = "pipeline.google.com"
+        ENV_URL = "stage.google.com"
           }
        steps {
               sh 'echo Environment url = ${ENV_URL}'
