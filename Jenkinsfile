@@ -1,5 +1,8 @@
 pipeline {
   agent any
+    options {
+    ansiColor('xterm')
+    }
     environment {
     ENV_URL = "pipeline.google.com"
     SSH_CRED = credentials("SSH")
@@ -20,6 +23,7 @@ pipeline {
        steps {
          sh 'echo Environment url = ${ENV_URL}'
          sh 'env'
+         sh "echo '\033[34mHello\033[0m \033[33mcolorful\033[0m \033[35mworld!\033[0m'"
        }
      }
   }
