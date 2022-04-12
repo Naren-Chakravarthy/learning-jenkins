@@ -22,6 +22,7 @@ pipeline {
     }
   stages {
     stage ("One") {
+    when { environment name: 'CHOICE', value: 'One' }
       steps {
       sh "echo Environment url = ${ENV_URL}"
       }
@@ -30,14 +31,15 @@ pipeline {
       environment {
         ENV_URL = "stage.google.com"
       }
-      input {
-                      message "Should we continue?"
-                      ok "Yes, we should."
-                      submitter "alice,bob"
-                      parameters {
-                          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                      }
-                  }
+//       input {
+//                       message "Should we continue?"
+//                       ok "Yes, we should."
+//                       submitter "alice,bob"
+//                       parameters {
+//                           string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+//                       }
+       when { environment name: 'CHOICE', value: 'Two' }
+     }
       steps {
       sh 'echo Environment url = ${ENV_URL}'
       sh 'env'
