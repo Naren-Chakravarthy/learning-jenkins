@@ -17,6 +17,9 @@ pipeline {
     triggers {
       pollSCM('*/2 * * * *')
     }
+    tools {
+      maven 'maven-3.8.5'
+    }
   stages {
     stage ("One") {
       steps {
@@ -40,7 +43,7 @@ pipeline {
       echo "Choice: ${params.CHOICE}"
 
       echo "Password: ${params.PASSWORD}"
-
+      sh 'mvn --version'
 
        }
      }
