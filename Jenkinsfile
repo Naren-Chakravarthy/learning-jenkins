@@ -59,16 +59,7 @@ pipeline {
       echo "Password: ${params.PASSWORD}"
       sh 'mvn --version'
       echo "Hello, ${PERSON}, nice to meet you."
-       }
-     }
-     stage("Three"){
-     when {
-       environment name: 'CHOICE', value: 'Three'
-     }
-       steps {
-         echo "Hello Naren"
-       }
-
-     }
+      }
+    }
   }
 }
