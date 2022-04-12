@@ -30,6 +30,14 @@ pipeline {
       environment {
         ENV_URL = "stage.google.com"
       }
+      input {
+                      message "Should we continue?"
+                      ok "Yes, we should."
+                      submitter "alice,bob"
+                      parameters {
+                          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                      }
+                  }
       steps {
       sh 'echo Environment url = ${ENV_URL}'
       sh 'env'
@@ -44,7 +52,7 @@ pipeline {
 
       echo "Password: ${params.PASSWORD}"
       sh 'mvn --version'
-
+      echo "Hello, ${PERSON}, nice to meet you."
        }
      }
   }
