@@ -22,7 +22,9 @@ pipeline {
     }
   stages {
     stage ("One") {
-    when { environment name: 'CHOICE', value: 'One' }
+    when {
+      environment name: 'CHOICE', value: 'One'
+    }
       steps {
       sh "echo Environment url = ${ENV_URL}"
       }
@@ -38,7 +40,9 @@ pipeline {
 //                       parameters {
 //                           string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 //                       }
-       when { environment name: 'CHOICE', value: 'Two' }
+//      }
+     when {
+       environment name: 'CHOICE', value: 'Two'
      }
       steps {
       sh 'echo Environment url = ${ENV_URL}'
