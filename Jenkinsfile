@@ -27,9 +27,6 @@ pipeline {
       environment {
         ENV_URL = "stage.google.com"
       }
-      parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-      }
       steps {
       sh 'echo Environment url = ${ENV_URL}'
       sh 'env'
