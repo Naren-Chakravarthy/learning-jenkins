@@ -14,29 +14,33 @@ pipeline {
       choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
       password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    triggers {
+      cron('*/2 * * * *')
+    }
   stages {
     stage ("One") {
       steps {
       sh "echo Environment url = ${ENV_URL}"
       }
     }
-     stage ("Two") {
-       environment {
-       ENV_URL = "stage.google.com"
-       }
-       steps {
-       sh 'echo Environment url = ${ENV_URL}'
-       sh 'env'
-       sh "echo '\033[34mHello\033[0m \033[33mcolorful\033[0m \033[35mworld!\033[0m'"
-       echo "Hello ${params.PERSON}"
+    stage ("Two") {
+      environment {
+        ENV_URL = "stage.google.com"
+      }
+      steps {
+      sh 'echo Environment url = ${ENV_URL}'
+      sh 'env'
+      sh "echo '\033[34mHello\033[0m \033[33mcolorful\033[0m \033[35mworld!\033[0m'"
+      echo "Hello ${params.PERSON}"
 
-       echo "Biography: ${params.BIOGRAPHY}"
+      echo "Biography: ${params.BIOGRAPHY}"
 
-       echo "Toggle: ${params.TOGGLE}"
+      echo "Toggle: ${params.TOGGLE}"
 
-       echo "Choice: ${params.CHOICE}"
+      echo "Choice: ${params.CHOICE}"
 
-       echo "Password: ${params.PASSWORD}"
+      echo "Password: ${params.PASSWORD}"
+
 
        }
      }
