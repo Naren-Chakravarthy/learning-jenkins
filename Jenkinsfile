@@ -73,7 +73,7 @@ pipeline{
             steps{
               sh 'sleep 10'
                   }
-                }
+          }
 
                 stage("two"){
                   steps{
@@ -92,7 +92,7 @@ pipeline{
 
   post{
     always{
-      cleanws()
+      cleanWs()
     }
 
   }
