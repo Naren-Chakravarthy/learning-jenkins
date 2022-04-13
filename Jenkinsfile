@@ -92,8 +92,8 @@ pipeline{
 
   post{
     always{
-      sh 'cleanWs()'
+      cleanWs()
+      sh 'echo post'
     }
-
   }
 }
