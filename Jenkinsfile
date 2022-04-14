@@ -90,7 +90,8 @@ pipeline {
     }
   post {
     always {
-      echo 'demo on posts'
+      cleanWs()
+      echo 'Clean the workspace'
     }
   }
 }
