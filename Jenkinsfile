@@ -64,33 +64,34 @@
 //   }
 // }
 
-pipeline{
+pipeline {
   agent {
     node { label 'workstation' }
   }
-    stages{
-      stage('parallel'){
+    stages {
+      stage('parallel') {
         parallel{
-          stage("one"){
+          stage("one") {
+            steps {
+              sh 'sleep 10'
+            }
+          }
+          stage("two") {
+             steps{
+               sh 'sleep 10'
+             }
+          }
+          stage("three"){
             steps{
               sh 'sleep 10'
-                  }
+            }
           }
-
-                stage("two"){
-                  steps{
-                    sh 'sleep 10'
-                  }
-                }
-
-                stage("three"){
-                  steps{
-                    sh 'sleep 10'
-                  }
-                }
         }
       }
     }
-
-
+  post {
+    always {
+      cleanWs()
+    }
+  }
 }
