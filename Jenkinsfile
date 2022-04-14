@@ -90,7 +90,7 @@ pipeline {
     }
   post {
     always {
-      cleanWs()
+      echo 'demo on posts'
     }
   }
 }
